@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>SKUPoint</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+      style='font-family: Inter, "Noto Sans", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f2f4] px-10 py-3"
+        >
+          <div class="flex items-center gap-4 text-[#121416]">
+            <div class="size-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M24-16C10.7-16 0-5.3 0 8S10.7 32 24 32l45.3 0c3.9 0 7.2 2.8 7.9 6.6l52.1 286.3c6.2 34.2 36 59.1 70.8 59.1L456 384c13.3 0 24-10.7 24-24s-10.7-24-24-24l-255.9 0c-11.6 0-21.5-8.3-23.6-19.7l-5.1-28.3 303.6 0c30.8 0 57.2-21.9 62.9-52.2L568.9 69.9C572.6 50.2 557.5 32 537.4 32l-412.7 0-.4-2c-4.8-26.6-28-46-55.1-46L24-16zM208 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm224 0a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/></svg>
+            </div>
+            <h2 class="text-[#121416] text-xl font-bold leading-tight tracking-[-0.015em]">
+              SKUPoint
+            </h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#111418] text-base font-semibold leading-normal" href="/dashboard">Dashboard</a>
+              <a class="text-[#111418] text-base font-semibold leading-normal" href="/product-list">Products</a>
+              <a class="text-[#111418] text-base font-semibold leading-normal" href="/activities">Activity</a>
+            </div>
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#f1f2f4] text-[#121416] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+            >
+              <div class="text-[#121416]" data-icon="Bell" data-size="20px" data-weight="regular">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                  height="20px"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBH23noL-peQ7FFbWppS_yw3yvTOGEVqluM09lc8JHPWVRvYoHX4FCrU5PMD9oo17-R6cGx0tLy1YnSW8NcN_r_KfgEkAfxk_b1NFkiQMcc0q3ktOtfFhdk9p59f3gyVKgQg2XvOAv7JKbiPsPOJmCUHeIspF4nJOEtMM-QtUGASv-V1eAU3CQgMRDxymLAAIyuYYkjf_wSMBCcE2Fc0WUc1zdo3l3HMncwYNSF7z-8YeYxF3zq6IHAUn_2KKGh29AUD1pi41g4dtE");'
+            ></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p class="text-[#121416] tracking-light text-[32px] font-bold leading-tight">
+                  Activity Log
+                </p>
+                <p class="text-[#6a7581] text-sm font-normal leading-normal">
+                  Track all changes made to the product catalog
+                </p>
+              </div>
+            </div>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-xl border border-[#dde0e3] bg-white">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-white">
+                      <th
+                        class="table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-120 px-4 py-3 text-left text-[#121416] w-[400px] text-sm font-medium leading-normal"
+                      >
+                        User
+                      </th>
+                      <th
+                        class="table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-240 px-4 py-3 text-left text-[#121416] w-[400px] text-sm font-medium leading-normal"
+                      >
+                        Action
+                      </th>
+                      <th
+                        class="table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-360 px-4 py-3 text-left text-[#121416] w-[400px] text-sm font-medium leading-normal"
+                      >
+                        Timestamp
+                      </th>
+                      <th
+                        class="table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-480 px-4 py-3 text-left text-[#121416] w-[400px] text-sm font-medium leading-normal"
+                      >
+                        Details
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let activity of activities" class="border-t border-t-[#dde0e3]">
+                      <td
+                        class="table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-120 h-[72px] px-4 py-2 w-[400px] text-[#121416] text-sm font-normal leading-normal"
+                      >
+                        {{ activity.name }}
+                      </td>
+                      <td
+                        class="table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-240 h-[72px] px-4 py-2 w-[400px] text-[#6a7581] text-sm font-normal leading-normal"
+                      >
+                        {{ activity.action }}
+                      </td>
+                      <td
+                        class="table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-360 h-[72px] px-4 py-2 w-[400px] text-[#6a7581] text-sm font-normal leading-normal"
+                      >
+                        {{ activity.timestamp }}
+                      </td>
+                      <td
+                        class="table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-480 h-[72px] px-4 py-2 w-[400px] text-[#6a7581] text-sm font-normal leading-normal"
+                      >
+                        {{ activity.details }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                @container (max-width: 120px) {
+                  .table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-120 {
+                    display: none;
+                  }
+                }
+                @container (max-width: 240px) {
+                  .table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-240 {
+                    display: none;
+                  }
+                }
+                @container (max-width: 360px) {
+                  .table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-360 {
+                    display: none;
+                  }
+                }
+                @container (max-width: 480px) {
+                  .table-75ce61d3-b61e-4a56-a1f7-2e75ae6b0761-column-480 {
+                    display: none;
+                  }
+                }
+              </style>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

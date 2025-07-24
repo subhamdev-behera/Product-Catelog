@@ -23,22 +23,10 @@
           class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3"
         >
           <div class="flex items-center gap-4 text-[#111418]">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_6_319)">
-                  <path
-                    d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
-                    fill="currentColor"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_319">
-                    <rect width="48" height="48" fill="white"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
+            <div class="size-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M24-16C10.7-16 0-5.3 0 8S10.7 32 24 32l45.3 0c3.9 0 7.2 2.8 7.9 6.6l52.1 286.3c6.2 34.2 36 59.1 70.8 59.1L456 384c13.3 0 24-10.7 24-24s-10.7-24-24-24l-255.9 0c-11.6 0-21.5-8.3-23.6-19.7l-5.1-28.3 303.6 0c30.8 0 57.2-21.9 62.9-52.2L568.9 69.9C572.6 50.2 557.5 32 537.4 32l-412.7 0-.4-2c-4.8-26.6-28-46-55.1-46L24-16zM208 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm224 0a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/></svg>
             </div>
-            <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">
+            <h2 class="text-[#111418] text-xl font-bold leading-tight tracking-[-0.015em]">
               SKUPoint
             </h2>
           </div>
@@ -70,11 +58,11 @@
                 />
               </div>
             </label>
-            <button
+            <a href="/add-product"
               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#0c77f2] text-white text-sm font-bold leading-normal tracking-[0.015em]"
             >
               <span class="truncate">New product</span>
-            </button>
+            </a>
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
               style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbxQciXMwrA-fLHMkLEkWXt9OPuhktui6Cq2QIShGbD-A9JldfkcicRqS5uXaKtLdYom83nZGg3JxlcFgxx9_jK0Wn1Qck7qKpSKbiMKffhXOdv9dJIie0qs8DBH9OTjjoqBkqihoovn5GBsOnXST00SJ1xy29fh91_IXcYgh0DGFcNQI7ZhT9Ru-Wwp1rrassvNaMCwQ00UxB6qszAc9pumXK9a_5whu8zRoujUeVvp6-U0lOrszQluNHKkqYFpDukycbhEUHkYQ");'
@@ -125,40 +113,48 @@
             <div class="flex gap-3 p-3 flex-wrap pr-4">
               <button
                 class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-2"
+                [class.bg-blue-200]="selectedStatus === 'Active'"
+                (click)="setStatusFilter('Active')"
               >
-                <p class="text-[#111418] text-sm font-medium leading-normal">Status</p>
-                <div class="text-[#111418]" data-icon="CaretDown" data-size="20px" data-weight="regular">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                    height="20px"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path>
-                  </svg>
-                </div>
+                <p class="text-[#111418] text-sm font-medium leading-normal">Active</p>
               </button>
               <button
                 class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-2"
+                [class.bg-blue-200]="selectedStatus === 'Inactive'"
+                (click)="setStatusFilter('Inactive')"
               >
-                <p class="text-[#111418] text-sm font-medium leading-normal">Category</p>
-                <div class="text-[#111418]" data-icon="CaretDown" data-size="20px" data-weight="regular">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                    height="20px"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
-                    ></path>
-                  </svg>
-                </div>
+                <p class="text-[#111418] text-sm font-medium leading-normal">Inactive</p>
               </button>
+              <button
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-2"
+                (click)="setStatusFilter(null)"
+              >
+                <p class="text-[#111418] text-sm font-medium leading-normal">All Status</p>
+              </button>
+
+
+              <button
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-2"
+                [class.bg-blue-200]="selectedCategory === 'Electronics'"
+                (click)="setCategoryFilter('Electronics')"
+              >
+                <p class="text-[#111418] text-sm font-medium leading-normal">Electronics</p>
+              </button>
+              <button
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-2"
+                [class.bg-blue-200]="selectedCategory === 'Apparel'"
+                (click)="setCategoryFilter('Apparel')"
+              >
+                <p class="text-[#111418] text-sm font-medium leading-normal">Apparel</p>
+              </button>
+               <button
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-2"
+                (click)="setCategoryFilter(null)"
+              >
+                <p class="text-[#111418] text-sm font-medium leading-normal">All Categories</p>
+              </button>
+
+
               <button
                 class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f2f5] pl-4 pr-2"
               >
@@ -211,7 +207,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let product of products$ | async" class="border-t border-t-[#dbe0e6]">
+                    <tr *ngFor="let product of paginatedProducts$ | async" class="border-t border-t-[#dbe0e6]">
                       <td
                         class="table-d230c9b0-5e27-4ff8-a31f-f85eda9a0046-column-120 h-[72px] px-4 py-2 w-[400px] text-[#111418] text-sm font-normal leading-normal"
                       >
@@ -272,6 +268,38 @@
                   }
                 }
               </style>
+            </div>
+
+            <div class="flex justify-center gap-2 py-4">
+              <button
+                class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100"
+                (click)="previousPage()"
+                [disabled]="(currentPage$ | async) === 1"
+              >
+                Previous
+              </button>
+              <ng-container *ngIf="totalPages > 0">
+                <button
+                  *ngFor="let page of getPagesArray()"
+                  class="flex items-center justify-center px-3 h-8 text-sm font-medium rounded-lg"
+                  [class.bg-blue-600]="(currentPage$ | async) === page"
+                  [class.text-white]="(currentPage$ | async) === page"
+                  [class.text-gray-700]="(currentPage$ | async) !== page"
+                  [class.bg-white]="(currentPage$ | async) !== page"
+                  [class.border]="(currentPage$ | async) !== page"
+                  [class.border-gray-300]="(currentPage$ | async) !== page"
+                  (click)="goToPage(page)"
+                >
+                  {{ page }}
+                </button>
+              </ng-container>
+              <button
+                class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100"
+                (click)="nextPage()"
+                [disabled]="(currentPage$ | async) === totalPages || totalPages === 0"
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>

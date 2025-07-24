@@ -28,6 +28,13 @@ interface Product {
 export class ProductListComponent implements OnInit {
   private allProductsSubject = new BehaviorSubject<Product[]>([]);
   products$: Observable<Product[]> | undefined;
+  paginatedProducts$: Observable<Product[]> | undefined; // New Observable for paginated products
+
+  // Pagination properties
+  private currentPageSubject = new BehaviorSubject<number>(1);
+  currentPage$ = this.currentPageSubject.asObservable();
+  itemsPerPage: number = 5; // Default items per page
+  totalPages: number = 0; // Will be calculated
 
   // Filter selections
   selectedStatus: string | null = null;
@@ -38,14 +45,18 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     // Fetch all products initially
     this.http.get<Product[]>('http://127.0.0.1:8000/products').subscribe(
-      products => this.allProductsSubject.next(products)
+      products => {
+        this.allProductsSubject.next(products);
+        this.calculateTotalPages(products.length);
+      }
     );
 
-    // Combine latest values from allProductsSubject and filter selections
-    this.products$ = combineLatest([
-      this.allProductsSubject.asObservable()
+    // Combine latest values from allProductsSubject, currentPageSubject, and filter selections
+    this.paginatedProducts$ = combineLatest([
+      this.allProductsSubject.asObservable(),
+      this.currentPageSubject.asObservable()
     ]).pipe(
-      map(([products]) => {
+      map(([products, currentPage]) => {
         let filteredProducts = products;
 
         // Apply status filter
@@ -58,14 +69,33 @@ export class ProductListComponent implements OnInit {
         if (this.selectedCategory !== null) {
           filteredProducts = filteredProducts.filter(product => product.category === this.selectedCategory);
         }
-        return filteredProducts;
+
+        // Calculate total pages based on filtered products
+        this.calculateTotalPages(filteredProducts.length);
+
+        // Apply pagination
+        const startIndex = (currentPage - 1) * this.itemsPerPage;
+        const endIndex = startIndex + this.itemsPerPage;
+        return filteredProducts.slice(startIndex, endIndex);
       })
     );
+  }
+
+  // Method to calculate total pages
+  private calculateTotalPages(totalItems: number): void {
+    this.totalPages = Math.ceil(totalItems / this.itemsPerPage);
+    // Ensure currentPage doesn't exceed totalPages after filtering/data change
+    if (this.currentPageSubject.getValue() > this.totalPages && this.totalPages > 0) {
+      this.currentPageSubject.next(this.totalPages);
+    } else if (this.totalPages === 0 && this.currentPageSubject.getValue() !== 1) {
+      this.currentPageSubject.next(1); // Reset to page 1 if no products
+    }
   }
 
   // Method to set status filter
   setStatusFilter(status: string | null): void {
     this.selectedStatus = status;
+    this.currentPageSubject.next(1); // Reset to first page when filter changes
     // Trigger re-filtering by emitting a new value to the subject
     this.allProductsSubject.next(this.allProductsSubject.getValue());
   }
@@ -73,6 +103,7 @@ export class ProductListComponent implements OnInit {
   // Method to set category filter (you'll need to implement a way to select categories)
   setCategoryFilter(category: string | null): void {
     this.selectedCategory = category;
+    this.currentPageSubject.next(1); // Reset to first page when filter changes
     // Trigger re-filtering by emitting a new value to the subject
     this.allProductsSubject.next(this.allProductsSubject.getValue());
   }
@@ -83,5 +114,29 @@ export class ProductListComponent implements OnInit {
 
   getProductAvailability(inStock: boolean): string {
     return inStock ? 'In Stock' : 'Out of Stock';
+  }
+
+  // Pagination methods
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPageSubject.next(page);
+    }
+  }
+
+  nextPage(): void {
+    if (this.currentPageSubject.getValue() < this.totalPages) {
+      this.currentPageSubject.next(this.currentPageSubject.getValue() + 1);
+    }
+  }
+
+  previousPage(): void {
+    if (this.currentPageSubject.getValue() > 1) {
+      this.currentPageSubject.next(this.currentPageSubject.getValue() - 1);
+    }
+  }
+
+  // Method to get an array of page numbers for ngFor
+  getPagesArray(): number[] {
+    return Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
 }

@@ -3,6 +3,7 @@ import { Dashboard } from './pages/dashboard/dashboard.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { AddProductComponent } from './pages/add-product/add-product.component'; // Import AddProductComponent
 import { DynamicFormComponent } from './pages/product-details/dynamic-form.component'; // Import DynamicFormComponent
+import { ActivityComponent } from './pages/activities/activities.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +17,10 @@ export const routes: Routes = [
     {
         path: 'add-product', // Route for AddProductComponent
         component: AddProductComponent
+    },
+    {
+        path: 'activities', // Route for AddProductComponent
+        component: ActivityComponent
     },
     {
         path: 'dynamic-form', // Route for DynamicFormComponent

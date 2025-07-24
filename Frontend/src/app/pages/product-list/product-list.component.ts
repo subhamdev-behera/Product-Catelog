@@ -62,13 +62,6 @@ export class ProductListComponent implements OnInit {
           filteredProducts = filteredProducts.filter((product) => product.inStock === inStock);
         }
 
-        // Removed category filter logic
-        /*
-        if (this.selectedCategory !== null) {
-          filteredProducts = filteredProducts.filter(product => product.category === this.selectedCategory);
-        }
-        */
-
         // Calculate total pages based on filtered products
         this.calculateTotalPages(filteredProducts.length);
 
@@ -98,15 +91,6 @@ export class ProductListComponent implements OnInit {
     // Trigger re-filtering by emitting a new value to the subject
     this.allProductsSubject.next(this.allProductsSubject.getValue());
   }
-
-  // Removed category filter method
-  /*
-  setCategoryFilter(category: string | null): void {
-    this.selectedCategory = category;
-    this.currentPageSubject.next(1);
-    this.allProductsSubject.next(this.allProductsSubject.getValue());
-  }
-  */
 
   getProductStatus(inStock: boolean): string {
     return inStock ? 'Active' : 'Inactive';

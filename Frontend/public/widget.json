@@ -1,74 +1,71 @@
 [
   {
-    "label": "Product Name",
+    "label": "Name",
     "type": "text",
-    "placeholder": "Enter product name",
-    "name": "fullName",
+    "placeholder": "e.g. Awesome T-Shirt",
+    "name": "name",
     "required": true
   },
   {
     "label": "Description",
-    "type": "text",
-    "placeholder": "Enter description",
-    "name": "email",
-    "required": true
+    "type": "textarea",
+    "placeholder": "Write a few sentences about the product",
+    "name": "desc",       
+    "required": false
   },
   {
     "label": "Category",
     "type": "text",
-    "placeholder": "Enter category",
-    "name": "password",
+    "placeholder": "e.g. Clothing",
+    "name": "category",
     "required": true
   },
   {
     "label": "Brand",
     "type": "text",
-    "placeholder": "Enter brand",
-    "name": "gender",
-    "required": true
+    "placeholder": "e.g. Nike",
+    "name": "brand",
+    "required": false
   },
   {
-    "label": "SKU",
+    "label": "Image URL",
     "type": "text",
-    "placeholder": "Enter SKU",
-    "name": "country",
+    "placeholder": "e.g., https://example.com/image.jpg",
+    "name": "imageUrl",   
     "required": false
   },
   {
     "label": "Price",
-    "type": "text",
-    "placeholder": "Enter price",
+    "type": "number",
+    "placeholder": "$0.00",
     "name": "price",
     "required": true
   },
   {
-    "label": "Sale Price",
-    "type": "text",
-    "placeholder": "Enter sale price",
-    "name": "salePrice",
+    "label": "Sale Price", 
+    "type": "number",
+    "placeholder": "$0.00",
+    "name": "salePrice",  
     "required": false
   },
   {
-    "label": "In Stock",
-    "type": "radio",
-    "name": "inStock",
-    "required": true,
-    "options": [
-      { "label": "Yes", "value": "true" },
-      { "label": "No", "value": "false" }
-    ]
+    "label": "SKU (Stock Keeping Unit)",
+    "type": "text",
+    "placeholder": "e.g. ABC-123",
+    "name": "SKU",        
+    "required": false
   },
   {
     "label": "Quantity",
-    "type": "text",
-    "placeholder": "Enter quantity",
+    "type": "number",
+    "placeholder": "0",
     "name": "quantity",
     "required": true
   },
   {
-    "label": "Agree to Terms & Conditions",
+    "label": "In Stock",
     "type": "checkbox",
-    "name": "terms",
-    "required": true
+    "name": "inStock",    
+    "required": false
   }
 ]

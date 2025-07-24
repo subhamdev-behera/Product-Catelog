@@ -226,7 +226,7 @@
 
         <div class="flex justify-center gap-2 py-4">
           <button
-            class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100"
+            class="flex items-center justify-center cursor-pointer px-3 h-8 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100"
             (click)="previousPage()"
             [disabled]="(currentPage$ | async) === 1"
           >
@@ -235,7 +235,7 @@
           <ng-container *ngIf="totalPages > 0">
             <button
               *ngFor="let page of getPagesArray()"
-              class="flex items-center justify-center px-3 h-8 text-sm font-medium rounded-lg"
+              class="flex items-center justify-center cursor-pointer px-3 h-8 text-sm font-medium rounded-lg"
               [class.bg-blue-600]="(currentPage$ | async) === page"
               [class.text-white]="(currentPage$ | async) === page"
               [class.text-gray-700]="(currentPage$ | async) !== page"
@@ -248,7 +248,7 @@
             </button>
           </ng-container>
           <button
-            class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100"
+            class="flex items-center justify-center cursor-pointer px-3 h-8 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100"
             (click)="nextPage()"
             [disabled]="(currentPage$ | async) === totalPages || totalPages === 0"
           >

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http'; // Import HttpParams
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { Observable, BehaviorSubject, combineLatest } from 'rxjs'; // Import BehaviorSubject and combineLatest
-import { switchMap, map } from 'rxjs/operators'; // Import operators
+import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-// Define an interface for your product data for better type safety
 interface Product {
   _id: string;
   name: string;
@@ -23,38 +22,36 @@ interface Product {
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
 export class ProductListComponent implements OnInit {
   private allProductsSubject = new BehaviorSubject<Product[]>([]);
   products$: Observable<Product[]> | undefined;
-  paginatedProducts$: Observable<Product[]> | undefined; // New Observable for paginated products
+  paginatedProducts$: Observable<Product[]> | undefined;
 
   // Pagination properties
   private currentPageSubject = new BehaviorSubject<number>(1);
   currentPage$ = this.currentPageSubject.asObservable();
-  itemsPerPage: number = 5; // Default items per page
-  totalPages: number = 0; // Will be calculated
+  itemsPerPage: number = 5;
+  totalPages: number = 0;
 
-  // Filter selections
+  // Filter selection
   selectedStatus: string | null = null;
-  selectedCategory: string | null = null;
+  // selectedCategory: string | null = null; // Removed
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     // Fetch all products initially
-    this.http.get<Product[]>('http://127.0.0.1:8000/products').subscribe(
-      products => {
-        this.allProductsSubject.next(products);
-        this.calculateTotalPages(products.length);
-      }
-    );
+    this.http.get<Product[]>('http://127.0.0.1:8000/products').subscribe((products) => {
+      this.allProductsSubject.next(products);
+      this.calculateTotalPages(products.length);
+    });
 
     // Combine latest values from allProductsSubject, currentPageSubject, and filter selections
     this.paginatedProducts$ = combineLatest([
       this.allProductsSubject.asObservable(),
-      this.currentPageSubject.asObservable()
+      this.currentPageSubject.asObservable(),
     ]).pipe(
       map(([products, currentPage]) => {
         let filteredProducts = products;
@@ -62,13 +59,15 @@ export class ProductListComponent implements OnInit {
         // Apply status filter
         if (this.selectedStatus !== null) {
           const inStock = this.selectedStatus === 'Active';
-          filteredProducts = filteredProducts.filter(product => product.inStock === inStock);
+          filteredProducts = filteredProducts.filter((product) => product.inStock === inStock);
         }
 
-        // Apply category filter
+        // Removed category filter logic
+        /*
         if (this.selectedCategory !== null) {
           filteredProducts = filteredProducts.filter(product => product.category === this.selectedCategory);
         }
+        */
 
         // Calculate total pages based on filtered products
         this.calculateTotalPages(filteredProducts.length);
@@ -100,13 +99,14 @@ export class ProductListComponent implements OnInit {
     this.allProductsSubject.next(this.allProductsSubject.getValue());
   }
 
-  // Method to set category filter (you'll need to implement a way to select categories)
+  // Removed category filter method
+  /*
   setCategoryFilter(category: string | null): void {
     this.selectedCategory = category;
-    this.currentPageSubject.next(1); // Reset to first page when filter changes
-    // Trigger re-filtering by emitting a new value to the subject
+    this.currentPageSubject.next(1);
     this.allProductsSubject.next(this.allProductsSubject.getValue());
   }
+  */
 
   getProductStatus(inStock: boolean): string {
     return inStock ? 'Active' : 'Inactive';

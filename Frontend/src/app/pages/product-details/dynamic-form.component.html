@@ -1,0 +1,335 @@
+    <html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+        <link
+        rel="stylesheet"
+        as="style"
+        onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&family=Inter%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+        />
+
+        <title>SKUPoint</title>
+        <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    </head>
+    <body>
+        <div
+        class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+        style='font-family: Inter, "Noto Sans", sans-serif;'
+        >
+        <div class="layout-container flex h-full grow flex-col">
+            <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] px-10 py-3"
+            >
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-4 text-[#111418]">
+                <div class="size-4">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_6_319)">
+                        <path
+                        d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                        fill="currentColor"
+                        ></path>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_6_319">
+                        <rect width="48" height="48" fill="white"></rect>
+                        </clipPath>
+                    </defs>
+                    </svg>
+                </div>
+                <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">
+                    SKUpoint
+                </h2>
+                </div>
+                <div class="flex items-center gap-9">
+                <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Dashboard</a>
+                <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Products</a>
+                <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Activities</a>
+                <a class="text-[#111418] text-sm font-medium leading-normal" href="#">Customers</a>
+                </div>
+            </div>
+            <div class="flex flex-1 justify-end gap-8">
+                <label class="flex flex-col !h-10 min-w-40 max-w-64">
+                <div class="flex h-full w-full flex-1 items-stretch rounded-lg">
+                    <div
+                    class="flex items-center justify-center rounded-l-lg border-r-0 border-none bg-[#f0f2f5] pl-4 text-[#60748a]"
+                    data-icon="MagnifyingGlass"
+                    data-size="24px"
+                    data-weight="regular"
+                    >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24px"
+                        height="24px"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                    >
+                        <path
+                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                        ></path>
+                    </svg>
+                    </div>
+                    <input
+                    placeholder="Search"
+                    class="form-input flex h-full w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border-l-0 border-none bg-[#f0f2f5] px-4 pl-2 text-base font-normal leading-normal text-[#111418] placeholder:text-[#60748a] focus:border-none focus:outline-0 focus:ring-0"
+                    value=""
+                    />
+                </div>
+                </label>
+                <button
+                class="flex min-w-0 max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#f0f2f5] px-2.5 text-sm font-bold leading-normal tracking-[0.015em] text-[#111418] h-10 gap-2"
+                >
+                <div class="text-[#111418]" data-icon="Bell" data-size="20px" data-weight="regular">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    >
+                    <path
+                        d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
+                    ></path>
+                    </svg>
+                </div>
+                </button>
+                <div
+                class="size-10 rounded-full bg-cover bg-center bg-no-repeat aspect-square"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnoqYSgO77wt3DDi8E9LVduYFjBhxcjz_np1drlSZCDoKtJb9W-ewk6fq8RY20NVYzhdMaW9qPbsv3kDHIJMiGeNPqvgIB42CCFsO7qQJd8Qf3j8Y7FLv47S6LL2UdMidYob_KUPlL76oojRDOS8CJ5DKVrShpq1KjgNvze_cgWOGmc4KFBP8S4xWv18yMTUIeIsvBzFNBANBAFzGBXlxudpTLXiKo7CjRo8oVJO_BxuMNiDZerZvctXDpAtkLEei6AJ4rr5JG1q4");'
+                ></div>
+            </div>
+            </header>
+            <div class="flex flex-1 justify-center px-40 py-5">
+            <div class="layout-content-container flex max-w-[960px] flex-1 flex-col">
+                <div class="flex flex-wrap gap-2 p-4">
+                <a class="text-[#60748a] text-base font-medium leading-normal" href="#">Products</a>
+                <span class="text-[#60748a] text-base font-medium leading-normal">/</span>
+                <a class="text-[#60748a] text-base font-medium leading-normal" href="#"
+                    >Electronics</a
+                >
+                <span class="text-[#60748a] text-base font-medium leading-normal">/</span>
+                <span class="text-[#111418] text-base font-medium leading-normal">Smartphones</span>
+                </div>
+                <div class="flex flex-wrap justify-between gap-3 p-4">
+                <div class="flex min-w-72 flex-col gap-3">
+                    <p class="text-[#111418] text-[32px] font-bold leading-tight tracking-light">
+                    Smartphone X100
+                    </p>
+                    <p class="text-[#60748a] text-sm font-normal leading-normal">SKU: 1234567890</p>
+                </div>
+                </div>
+                <div class="pb-3">
+                <div class="flex gap-8 border-b border-[#dbe0e6] px-4">
+                    <a
+                    class="flex flex-col items-center justify-center border-b-[3px] border-b-[#111418] pb-[13px] pt-4 text-[#111418]"
+                    href="#"
+                    >
+                    <p class="text-[#111418] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Overview
+                    </p>
+                    </a>
+                    <a
+                    class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-4 text-[#60748a]"
+                    href="#"
+                    >
+                    <p class="text-[#60748a] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Specifications
+                    </p>
+                    </a>
+                    <a
+                    class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent pb-[13px] pt-4 text-[#60748a]"
+                    href="#"
+                    >
+                    <p class="text-[#60748a] text-sm font-bold leading-normal tracking-[0.015em]">
+                        Reviews
+                    </p>
+                    </a>
+                </div>
+                </div>
+
+                <div class="form-container">
+                <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+                    <div *ngFor="let field of formFields">
+                    <h2
+                        *ngIf="
+                        field.name === 'fullName' ||
+                        field.name === 'password' ||
+                        field.name === 'inStock' ||
+                        field.name === 'price' ||
+                        field.name === 'terms'
+                        "
+                        class="px-4 pb-3 pt-5 text-[22px] font-bold leading-tight tracking-[-0.015em] text-[#111418]"
+                    >
+                        {{
+                        field.name === 'fullName'
+                            ? 'Product Details'
+                            : field.name === 'password'
+                            ? 'Additional Details'
+                            : field.name === 'price'
+                            ? 'Pricing'
+                            : field.name === 'inStock'
+                            ? 'Inventory'
+                            : field.name === 'terms'
+                            ? 'Legal'
+                            : ''
+                        }}
+                    </h2>
+                    <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                        <label
+                        *ngIf="
+                            field.type === 'text' || field.type === 'email' || field.type === 'password'
+                        "
+                        class="flex min-w-40 flex-1 flex-col"
+                        >
+                        <p class="pb-2 text-base font-medium leading-normal text-[#111418]">
+                            {{ field.label }}
+                            <span *ngIf="field.required" class="required">*</span>
+                        </p>
+                        <input
+                            [type]="field.type"
+                            [id]="field.name"
+                            [formControlName]="field.name"
+                            [placeholder]="field.placeholder || ''"
+                            class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-[#dbe0e6] bg-white p-[15px] text-base font-normal leading-normal text-[#111418] placeholder:text-[#60748a] focus:border-[#dbe0e6] focus:outline-0 focus:ring-0"
+                            [class.error]="isFieldInvalid(field.name)"
+                        />
+
+                        <div class="error-message" *ngIf="isFieldInvalid(field.name)">
+                            <span *ngIf="hasError(field.name, 'required')"
+                            >{{ field.label }} is required</span
+                            >
+                            <span *ngIf="hasError(field.name, 'email')"
+                            >Please enter a valid email</span
+                            >
+                            <span *ngIf="hasError(field.name, 'minlength')"
+                            >{{ field.label }} must be at least 6 characters</span
+                            >
+                        </div>
+                        </label>
+
+                        <label *ngIf="field.type === 'radio'" class="flex min-w-40 flex-1 flex-col">
+                        <p class="pb-2 text-base font-medium leading-normal text-[#111418]">
+                            {{ field.label }}
+                            <span *ngIf="field.required" class="required">*</span>
+                        </p>
+                        <div class="radio-group flex gap-2">
+                            <div *ngFor="let option of field.options" class="radio-item flex items-center gap-1">
+                            <input
+                                type="radio"
+                                [id]="field.name + '_' + option.value"
+                                [formControlName]="field.name"
+                                [value]="option.value"
+                                class="form-radio h-4 w-4 text-[#0c77f2] focus:ring-[#0c77f2]"
+                            />
+                            <label
+                                [for]="field.name + '_' + option.value"
+                                class="text-base font-normal leading-normal text-[#111418]"
+                                >{{ option.label }}</label
+                            >
+                            </div>
+                        </div>
+
+                        <div class="error-message" *ngIf="isFieldInvalid(field.name)">
+                            <span *ngIf="hasError(field.name, 'required')"
+                            >Please select {{ field.label.toLowerCase() }}</span
+                            >
+                        </div>
+                        </label>
+
+                        <label *ngIf="field.type === 'select'" class="flex min-w-40 flex-1 flex-col">
+                        <p class="pb-2 text-base font-medium leading-normal text-[#111418]">
+                            {{ field.label }}
+                            <span *ngIf="field.required" class="required">*</span>
+                        </p>
+                        <select
+                            [id]="field.name"
+                            [formControlName]="field.name"
+                            class="form-select flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-[#dbe0e6] bg-white p-[15px] text-base font-normal leading-normal text-[#111418] placeholder:text-[#60748a] focus:border-[#dbe0e6] focus:outline-0 focus:ring-0"
+                            [class.error]="isFieldInvalid(field.name)"
+                        >
+                            <option value="">Select {{ field.label.toLowerCase() }}</option>
+                            <option *ngFor="let option of field.options" [value]="option.value">
+                            {{ option.label }}
+                            </option>
+                        </select>
+
+                        <div class="error-message" *ngIf="isFieldInvalid(field.name)">
+                            <span *ngIf="hasError(field.name, 'required')"
+                            >Please select {{ field.label.toLowerCase() }}</span
+                            >
+                        </div>
+                        </label>
+
+                        <label
+                        *ngIf="field.type === 'checkbox'"
+                        class="flex min-w-40 flex-1 flex-col"
+                        >
+                        <div class="checkbox-group flex items-center gap-2">
+                            <input
+                            type="checkbox"
+                            [id]="field.name"
+                            [formControlName]="field.name"
+                            class="form-checkbox h-4 w-4 text-[#0c77f2] focus:ring-[#0c77f2]"
+                            [class.error]="isFieldInvalid(field.name)"
+                            />
+                            <label
+                            [for]="field.name"
+                            class="text-base font-normal leading-normal text-[#111418]"
+                            >
+                            {{ field.label }}
+                            <span *ngIf="field.required" class="required">*</span>
+                            </label>
+                        </div>
+
+                        <div class="error-message" *ngIf="isFieldInvalid(field.name)">
+                            <span *ngIf="hasError(field.name, 'required')"
+                            >You must agree to {{ field.label.toLowerCase() }}</span
+                            >
+                        </div>
+                        </label>
+                    </div>
+                    </div>
+
+                    <h2
+                    class="px-4 pb-3 pt-5 text-[22px] font-bold leading-tight tracking-[-0.015em] text-[#111418]"
+                    >
+                    Images
+                    </h2>
+                    <div class="@[480px]:gap-2 w-full @container flex grow overflow-hidden bg-white p-4">
+                    <div
+                        class="grid aspect-[3/2] w-full grid-cols-[2fr_1fr_1fr] gap-1 rounded-lg bg-white"
+                    >
+                        <div
+                        class="row-span-2 aspect-auto w-full rounded-none bg-cover bg-center bg-no-repeat"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhhQ_tqxzzW-KPwY45t10UHG2Xak0Ci_bfHAmNbIlz0EZehXtulfhFf4Q1fD_lIjTXm9n4wei6Wm4KZjw9P0qC9an5ATpLyRHwvP4XWgHneVf-bEdvhFMZ42nEgiTchA03hgmJtGOz4hV_t7KOCFpDjmUwk_ptPEpPtn5EYK6RO5zenFnKt1Qcl0GIgmPWv38HO9UNDbcrXTGKxbLNEz92Xo5moz6q8jnCSaFmIpMZRJZSMOSGDnGB3tprcNklvtSCzUFLTX2I9b8");'
+                        ></div>
+                        <div
+                        class="col-span-2 aspect-auto w-full rounded-none bg-cover bg-center bg-no-repeat"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3g04CxUoQOW1bdojB_ND70JSkV4CtDr_rmHaec5kamjCOV5MTZ3xmQe_PRNAzFH5ysK1u0dsDV79Klzerp4yZa7mOR_7LiyPg_YpPSCirzHdqf7P6mMRFD-z1CeI9NpvLsUPlJhJvPgVpiLdMhRABBr1q3yJtdI0W5wXo1Nf7oTPdhikxaThZaxh6QLad1pgBstyLpQdIbY-U0Qk9hzc3FY7CX1T8UTSytfrCxBeC9zzs3cUEiw8Lhg_zce13LM-lqsGq6FomIIU");'
+                        ></div>
+                        <div
+                        class="col-span-2 aspect-auto w-full rounded-none bg-cover bg-center bg-no-repeat"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDl24MF1f4hyoaybIN3sp1BO8qi_-z0efia7MuTULKp53FBsHHwEXPcKfJxReFGp-vVhqzvAMf5mMu-saL0tXrMkFwc43xh3EnXNw6lWt5eYMWegtB1RE__F6EVGr-cdcYr-XuCYZX0JfbkfnaW0JT0IC1jvIbo8fCFtjKEX7cfoZ6oyFI9aF40Vh6mxqGTkpqVmaihPqro-ZWVZNncGaYtfxIh3euJkuWjsS8hwdRQLGwsoEHuKLgvQEu_37ap7tUTB_VzHRqsbIg");'
+                        ></div>
+                    </div>
+                    </div>
+
+                    <div class="flex justify-end px-4 py-3">
+                    <button
+                        type="submit"
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#0c77f2] px-4 text-sm font-bold leading-normal tracking-[0.015em] text-white h-10"
+                        [disabled]="userForm.invalid"
+                    >
+                        <span class="truncate">Save Changes</span>
+                    </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </body>
+    </html>

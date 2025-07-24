@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Product Name",
+    "type": "text",
+    "placeholder": "Enter product name",
+    "name": "fullName",
+    "required": true
+  },
+  {
+    "label": "Description",
+    "type": "text",
+    "placeholder": "Enter description",
+    "name": "email",
+    "required": true
+  },
+  {
+    "label": "Category",
+    "type": "text",
+    "placeholder": "Enter category",
+    "name": "password",
+    "required": true
+  },
+  {
+    "label": "Brand",
+    "type": "text",
+    "placeholder": "Enter brand",
+    "name": "gender",
+    "required": true
+  },
+  {
+    "label": "SKU",
+    "type": "text",
+    "placeholder": "Enter SKU",
+    "name": "country",
+    "required": false
+  },
+  {
+    "label": "Price",
+    "type": "text",
+    "placeholder": "Enter price",
+    "name": "price",
+    "required": true
+  },
+  {
+    "label": "Sale Price",
+    "type": "text",
+    "placeholder": "Enter sale price",
+    "name": "salePrice",
+    "required": false
+  },
+  {
+    "label": "In Stock",
+    "type": "radio",
+    "name": "inStock",
+    "required": true,
+    "options": [
+      { "label": "Yes", "value": "true" },
+      { "label": "No", "value": "false" }
+    ]
+  },
+  {
+    "label": "Quantity",
+    "type": "text",
+    "placeholder": "Enter quantity",
+    "name": "quantity",
+    "required": true
+  },
+  {
+    "label": "Agree to Terms & Conditions",
+    "type": "checkbox",
+    "name": "terms",
+    "required": true
+  }
+]

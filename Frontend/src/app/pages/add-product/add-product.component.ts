@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import formFields from '../../../../public/widget.json';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 interface FormField {
   label: string;
@@ -21,7 +22,8 @@ interface FormField {
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NavbarComponent
   ]
 })
 export class AddProductComponent implements OnInit {

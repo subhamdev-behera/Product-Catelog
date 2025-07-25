@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common'; // Import CommonModule for ngFor
+import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 interface Activity {
   _id: string;
@@ -20,7 +21,7 @@ interface Activity {
   // If you are using an NgModule, ensure HttpClientModule is imported in your AppModule
   // and CommonModule is imported in the module where ActivityComponent is declared.
   standalone: true, // Mark as standalone if not already
-  imports: [CommonModule], // Add CommonModule here
+  imports: [CommonModule,NavbarComponent], // Add CommonModule here
 })
 export class ActivityComponent implements OnInit {
   activities: Activity[] = [];

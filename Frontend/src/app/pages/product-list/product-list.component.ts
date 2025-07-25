@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 interface Product {
   _id: string;
@@ -22,7 +23,7 @@ interface Product {
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NavbarComponent],
 })
 export class ProductListComponent implements OnInit {
   private allProductsSubject = new BehaviorSubject<Product[]>([]);

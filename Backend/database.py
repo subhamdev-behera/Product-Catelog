@@ -8,7 +8,7 @@ MONGO_URI = os.getenv("MONGO_URI")
 
 # Use AsyncIOMotorClient for asynchronous operations
 client = AsyncIOMotorClient(MONGO_URI)
-db = client["myDatabase"]
+db = client["Testing"]
 
 # Collections for each model
 user_collection = db["users"]

@@ -24,7 +24,7 @@ class Product(BaseModel):
     brand: str
     SKU: Optional[str] = None # Made SKU optional
     price: float # Changed to float
-    salePrice: float # Changed to float
+    salePrice: Optional[float] # Changed to float
     inStock: bool
     quantity: int
     imageUrl: Optional[HttpUrl] = None
